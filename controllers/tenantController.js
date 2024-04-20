@@ -34,9 +34,9 @@ const register = async (req, res) => {
 
 const createUser = async (req, res) => {
     try {
-        const validated = await validateUser(req.body);
+        const validated = await validateUser.validate(req.body);
         const user = new User({
-            tenant: validated.tenantId,
+            tenant: validated.tenant_id,
             platform: validated.platform,
             device: validated.device,
             browser: validated.browser,
